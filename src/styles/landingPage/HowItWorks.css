@@ -1,0 +1,93 @@
+#how-title {
+  text-align: center;
+  color: white;
+  font-weight: 400;
+}
+#progress-container {
+  height: 300px;
+  border-radius: 50%;
+  border: 2px dotted white;
+  margin: 20px;
+  border-top: 3px solid white;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 0 30px;
+  cursor: pointer;
+  width: 300px;
+  margin: 20px auto;
+}
+#steps-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+#step-title {
+  font-size: 26px;
+}
+#step-details {
+  font-size: 14px;
+  margin: 0 20px;
+  text-align: center;
+}
+
+#chains-details-main-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  gap: 1px;
+}
+#chains-details-card {
+  background-color: white;
+  color: black;
+  width: 100%;
+  padding: 20px;
+  height: calc(150px - 40px);
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  cursor: pointer;
+}
+#chains-details-card:hover {
+  background-color: var(--primary-color);
+}
+
+#chains-details-card > p {
+  font-size: 16px;
+}
+#chains-details-card > h6 {
+  font-size: 25px;
+}
+
+@media screen and (min-width: 700px) {
+  #how-title {
+    font-size: 25px;
+  }
+  #progress-container {
+    width: 410px;
+    height: 410px;
+  }
+  #chains-details-main-container {
+    flex-direction: row;
+    padding: 20px 70px;
+  }
+  #chains-details-card {
+    width: auto;
+    flex: 1;
+    height: 200px;
+  }
+  #chains-details-card > h6 {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #how-title {
+    font-size: 35px;
+  }
+}

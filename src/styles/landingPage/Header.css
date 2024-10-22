@@ -1,0 +1,78 @@
+header {
+  background-color: white;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+#home-link {
+  color: black;
+  font-size: 25px;
+}
+.header-btn {
+  font-size: 18px;
+  display: inline-block;
+  padding: 5px;
+  margin: 0 5px;
+  color: white;
+  border: none;
+}
+#launch-app-header {
+  background-color: var(--primary-color);
+}
+#menu-btn {
+  background-color: black;
+}
+
+nav {
+  position: absolute;
+  background-color: white;
+  left: 0;
+  top: 0;
+  padding: 20px 30px;
+  height: 100vh;
+  display: none;
+}
+.nav-links {
+  color: black;
+  font-weight: 600;
+  font-size: 20px;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+@media screen and (min-width: 700px) {
+  header {
+    padding: 10px 25px;
+  }
+  #home-link {
+    font-size: 24px;
+  }
+  #header-mobile-action-container {
+    display: none;
+  }
+  nav {
+    position: relative;
+    display: inline-block;
+    height: auto;
+    background-color: transparent;
+    padding: 0;
+  }
+  .nav-links {
+    display: inline-block;
+    font-size: 16px;
+  }
+  nav > ul {
+    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1000px) {
+  header {
+    padding: 10px 70px;
+  }
+}

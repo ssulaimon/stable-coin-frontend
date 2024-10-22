@@ -1,0 +1,41 @@
+#liquidity-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  gap: 10px;
+}
+.liquidity-title {
+  font-size: 24px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 10px;
+}
+.liquidity-details {
+  color: var(--primary-color);
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+#liquidity-image {
+  display: inline-block;
+  width: calc(100% - 40px);
+}
+@media screen and (min-width: 700px) {
+  #liquidity-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .liquidity-title {
+    font-size: 35px;
+    font-weight: 500;
+  }
+  .liquidity-details {
+    font-size: 19px;
+    font-weight: 500;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #liquidity-container {
+    padding: 0px 70px;
+    gap: 140px;
+  }
+}

@@ -1,0 +1,11 @@
+.divider {
+  padding: 1px;
+  background-color: white;
+  width: 100%;
+  margin: 30px 0;
+}
+@media screen and (min-width: 700px) {
+  .divider {
+    margin: 50px 0;
+  }
+}
