@@ -39,7 +39,7 @@
 #chains-details-main-container {
   display: flex;
   flex-direction: column;
-  padding: 10px 20px;
+  padding: 10px 0;
   gap: 1px;
 }
 #chains-details-card {

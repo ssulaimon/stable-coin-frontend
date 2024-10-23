@@ -1,5 +1,5 @@
 #ecosystem-main-container {
-  margin: 10px 20px;
+  margin: 10px 0;
 }
 #ecosystems-card-container {
   display: flex;
@@ -29,7 +29,7 @@
 }
 @media screen and (min-width: 700px) {
   #ecosystem-main-container {
-    margin: 20px 70px;
+    margin: 20px 0;
   }
   .ecosystem-card {
     width: calc(33.3% - 10px);

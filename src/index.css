@@ -15,3 +15,16 @@ a {
 ul {
   list-style: none;
 }
+.container-one {
+  margin: 0 20px;
+}
+@media screen and (min-width: 700px) {
+  .container-one {
+    margin: 0 50px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .container-one {
+    margin: 0 70px;
+  }
+}

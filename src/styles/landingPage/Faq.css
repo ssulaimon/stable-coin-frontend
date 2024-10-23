@@ -3,16 +3,16 @@
   margin-bottom: 20px;
 }
 #faq-main-container {
-  margin: 10px 20px;
+  margin: 10px 0;
   margin-bottom: 100px;
 }
 @media screen and (min-width: 700px) {
   #faq-main-container {
-    margin: 50px;
+    margin: 50px 0;
   }
 }
 @media screen and (min-width: 1000px) {
   #faq-main-container {
-    margin: 50px 70px;
+    margin: 50px 0;
   }
 }

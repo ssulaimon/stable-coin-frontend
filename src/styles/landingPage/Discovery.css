@@ -1,5 +1,5 @@
 #dicovery-container-one {
-  padding: 0 20px;
+  padding: 0px;
 }
 #cartesi-image {
   height: 300px;
@@ -11,8 +11,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: center;
-  margin: 10px;
+  /* justify-content: center; */
+  margin: 10px 0;
 }
 .protocol-card {
   height: 100px;
@@ -29,13 +29,11 @@
   background-color: white;
   color: black;
 }
-#protocol-title {
-  margin-left: 30px;
-}
+
 #protocol-security-main-container {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 20px 0;
   gap: 30px;
 }
 .security-card {
@@ -77,7 +75,7 @@
   }
   #protocol-security-main-container {
     flex-direction: row;
-    margin: 0 40px;
+    /* margin: 0 40px; */
     margin-top: 30px;
     align-items: baseline;
   }
@@ -91,7 +89,7 @@
 }
 @media screen and (min-width: 1000px) {
   #protocol-security-main-container {
-    margin: 0 70px;
+    /* margin: 0 70px; */
     margin-top: 30px;
     gap: 100px;
   }
