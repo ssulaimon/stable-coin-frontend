@@ -13,8 +13,8 @@ export function Ecosystem(){
         Ecosystem
     </h3>
     <div id="ecosystems-card-container">
-    {ecosystem.map((item)=>
-     <div className="ecosystem-card">
+    {ecosystem.map((item, index)=>
+     <div className="ecosystem-card" key={index}>
 <img src={item.image} alt={`${item.image}-image`} className="ecosystem-image" />
 <h4 className="ecosystem-title">
     {item.title}

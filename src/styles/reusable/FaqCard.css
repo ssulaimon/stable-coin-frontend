@@ -1,0 +1,25 @@
+.faq-card-main-container {
+  width: 100%;
+  border: 1px solid white;
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.faq-answer {
+  transition: max-height 1s ease, opacity 1s ease;
+}
+.faq-question-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media screen and (min-width: 700px) {
+  .faq-card-main-container {
+    width: 400px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .faq-card-main-container {
+    width: 600px;
+  }
+}

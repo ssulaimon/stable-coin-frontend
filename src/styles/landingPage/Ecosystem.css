@@ -27,3 +27,14 @@
   margin-top: 5px;
   font-weight: 400;
 }
+@media screen and (min-width: 700px) {
+  #ecosystem-main-container {
+    margin: 20px 70px;
+  }
+  .ecosystem-card {
+    width: calc(33.3% - 10px);
+  }
+  .ecosystem-details {
+    font-weight: 500;
+  }
+}

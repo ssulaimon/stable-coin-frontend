@@ -34,7 +34,7 @@
 @media screen and (min-width: 1000px) {
   #banner {
     padding: 50px 70px;
-    gap: 140px;
+    gap: 30px;
   }
   #banner-large-text {
     font-size: 32px;
