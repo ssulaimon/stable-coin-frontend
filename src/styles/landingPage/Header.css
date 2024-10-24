@@ -32,7 +32,17 @@ nav {
   top: 0;
   padding: 20px 30px;
   height: 100vh;
-  display: none;
+  transition: opacity 1s ease, max-width 1s ease;
+}
+.hide-nav {
+  max-width: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.show-nav {
+  max-width: 200px;
+  opacity: 1;
+  visibility: visible;
 }
 .nav-links {
   color: black;
@@ -58,6 +68,11 @@ nav {
     height: auto;
     background-color: transparent;
     padding: 0;
+  }
+  #nav {
+    visibility: visible;
+    opacity: 1;
+    max-width: 500px;
   }
   .nav-links {
     display: inline-block;

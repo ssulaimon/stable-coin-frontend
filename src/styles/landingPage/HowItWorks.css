@@ -3,12 +3,32 @@
   color: white;
   font-weight: 400;
 }
+.step-one {
+  border: 2px dotted white;
+  border-top: 3px solid white;
+}
+.step-two {
+  border: 2px dotted white;
+  border-top: 3px solid white;
+  border-right: 3px solid white;
+}
+.step-three {
+  border: 2px dotted white;
+  border-bottom: 3px solid white;
+  border-top: 3px solid white;
+  border-right: 3px solid white;
+}
+.step-four {
+  border-left: 3px solid white;
+  border-bottom: 3px solid white;
+  border-top: 3px solid white;
+  border-right: 3px solid white;
+}
 #progress-container {
   height: 300px;
   border-radius: 50%;
-  border: 2px dotted white;
+
   margin: 20px;
-  border-top: 3px solid white;
   display: flex;
   flex-direction: column;
   color: white;
@@ -19,7 +39,10 @@
   cursor: pointer;
   width: 300px;
   margin: 20px auto;
+  transition: border-top 3s ease-in, border-left 3s ease-in,
+    border-right 3s ease-in, border-bottom 3s ease-in;
 }
+
 #steps-item {
   display: flex;
   flex-direction: column;
@@ -29,6 +52,7 @@
 }
 #step-title {
   font-size: 26px;
+  text-align: center;
 }
 #step-details {
   font-size: 14px;
