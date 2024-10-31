@@ -1,0 +1,20 @@
+.active-main-container {
+  background-color: white;
+  display: block;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.active-drop-down-name {
+  color: black;
+}
+.active-detail-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+.active-asset-icon {
+  height: 30px;
+  width: 30px;
+}

@@ -1,0 +1,54 @@
+#side-pannel {
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 1s ease, max-height 1s ease;
+  bottom: 0;
+  overflow-y: scroll;
+}
+.side-pannel-btn {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  width: 200px;
+  border: none;
+  align-items: center;
+  border-radius: 10px;
+}
+.side-pannel-name {
+  font-size: 13px;
+}
+.side-pannel-icon {
+  display: none;
+}
+
+@media screen and (min-width: 1000px) {
+  #side-pannel {
+    position: relative;
+    width: 200px;
+    border-radius: 0;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-height: none !important;
+    height: 100vh;
+    transition: none;
+  }
+  .side-pannel-btn {
+    width: auto;
+    gap: 10px;
+    transition: background-color 1s ease;
+  }
+  .side-pannel-icon {
+    display: block;
+  }
+}

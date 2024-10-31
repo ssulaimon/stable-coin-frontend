@@ -1,0 +1,40 @@
+#top-bar-main-container {
+  height: 50px;
+  background-color: white;
+  padding: 5px 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#connect-wallet-btn {
+  background-color: #010b13;
+  color: white;
+  padding: 4px 9px;
+  font-size: 13px;
+  border: none;
+  border-radius: 20px;
+  display: block;
+  justify-content: center;
+}
+#website-link {
+  display: none;
+  color: #010b13;
+}
+@media screen and (min-width: 1000px) {
+  #top-bar-main-container {
+    height: 70px;
+  }
+  #connect-wallet-btn {
+    font-size: 15px;
+    border-radius: 0;
+    padding: 10px 30px;
+  }
+  #open-menu-btn {
+    display: none;
+  }
+  #website-link {
+    display: block;
+    font-weight: 600;
+  }
+}

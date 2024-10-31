@@ -18,9 +18,31 @@ ul {
 .container-one {
   margin: 0 20px;
 }
+.section-title {
+  color: white;
+  text-align: center;
+}
+.input-main-container {
+  border: 2px solid #484343;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px 0;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+}
+.action-icons {
+  display: block;
+  margin: 30px auto;
+  height: 60px;
+  width: 60px;
+}
 @media screen and (min-width: 700px) {
   .container-one {
     margin: 0 50px;
+  }
+  .input-main-container {
+    width: 300px;
   }
 }
 @media screen and (min-width: 1000px) {
