@@ -12,7 +12,7 @@ export function Banner(){
     USDNDAO Stablecoin with Dynamic, Market-Driven Savings Rates 
     </h1>
     <p id="banner-detail-text">
-    BACKED BY WBTC,WETH, AND OTHER ASSETS
+    BACKED BY WBTC, WETH, AND OTHER ASSETS
     </p>
     <LargeButton title={"LAUNCH APP"} backgroundColor={"white"} onTap={()=> navigate(myRoutes.app)}/>
 </div>

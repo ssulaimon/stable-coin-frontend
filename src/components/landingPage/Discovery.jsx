@@ -2,7 +2,7 @@ import "../../styles/landingPage/Discovery.css";
 import cartesi from "../../assets/cartesi.svg";
 import { LargeButton } from "../reusable/LargeButton";
 export function Discovery(){
-    const protocolDetails = ["Leverage the Strengths of Reward-Beating Collateral", "The DUSD Saving Rate", "Bridging Blockchains Seamlessly", "Establishing a DeFi Benchmark"]
+    const protocolDetails = ["Leverage the Strengths of Reward-Beating Collateral", "The USDN Saving Rate", "Bridging Blockchains Seamlessly", "Establishing a DeFi Benchmark"]
     return <div>
         <div id="dicovery-container-one">
         <img src={cartesi} alt="cartesi-image" id="cartesi-image" />

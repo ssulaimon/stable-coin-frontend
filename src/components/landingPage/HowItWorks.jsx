@@ -16,7 +16,7 @@ export function HowItWorks(){
       new StepsModel('STEP 04', 'Redeem Collateral', 'BURN USDNEXUS TO REDEEM CRYPTO COLLATERAL DEPOSITED', <MdOutlineRedeem/>)
     ];
     const [index, updateIndex] = useState(0);
-    const chainsDetails = [{title: "30+ Assets", details: "WETH,WBTC AND MORE"}, {title: "15+ Platforms", details: "UNISWAP,AAVE AND MORE"}, {title: "10+Chains", details: "ETH, POLYGON AND MORE"}];
+    const chainsDetails = [{title: "30+ Assets", details: "WETH, WBTC AND MORE"}, {title: "15+ Platforms", details: "UNISWAP, AAVE AND MORE"}, {title: "10+Chains", details: "ETH, POLYGON AND MORE"}];
 
     function check(){
         if(index === 0){

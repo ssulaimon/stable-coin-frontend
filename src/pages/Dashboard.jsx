@@ -1,5 +1,5 @@
-import "../styles/Dashboard/Dashboard.css";
-export function Dashboard(){
+export const Dashboard = ()=>{
     return <div>
+        
     </div>
 }

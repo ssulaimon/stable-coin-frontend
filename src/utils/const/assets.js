@@ -1,5 +1,5 @@
-import wbtc from "../../assets/wbtc.svg";
-import weth from "../../assets/weth.svg";
+import wbtc from "../../assets/app/wbtc.svg";
+import weth from "../../assets/app/weth.svg";
 export const allowedAssets = [{
     name: "WBTC",
     image: wbtc

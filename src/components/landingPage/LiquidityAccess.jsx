@@ -9,8 +9,8 @@ export function LiquidityAccess(){
         Access to <br /> Ethereumchain Liquidity 
         </h1>
         <p className="liquidity-details">
-        EFFORTLESSLY TRANSFER DUSD ACROSS
-NETWORKS WITH DORUDAO BRIDGE,
+        EFFORTLESSLY TRANSFER USDN ACROSS
+NETWORKS WITH ETHEREUM BRIDGE,
 WITHOUT FEES OR HIDDEN COSTS
         </p>
        </div>

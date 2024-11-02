@@ -1,0 +1,33 @@
+.drop-down-main-container {
+  position: relative;
+}
+.option-main-container {
+  position: absolute;
+  width: 100%;
+
+  transition: opacity 1s ease;
+}
+.active-value {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: black;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  border: none;
+}
+.asset-image {
+  height: 20px;
+  width: 20px;
+}
+.drop-down-icon {
+  height: 15px;
+  height: 15px;
+}
+@media screen and (min-width: 1000px) {
+  .asset-image {
+    height: 25px;
+    width: 25px;
+  }
+}

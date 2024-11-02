@@ -63,7 +63,7 @@ export function Footer(){
     </li>
     <li>
         <a href="" className="footer-links">
-            USDNDao@gmail.com
+            usdnexus@gmail.com
         </a>
     </li>
     

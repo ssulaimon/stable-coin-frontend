@@ -15,6 +15,9 @@ a {
 ul {
   list-style: none;
 }
+button {
+  cursor: pointer;
+}
 .container-one {
   margin: 0 20px;
 }
@@ -22,31 +25,30 @@ ul {
   color: white;
   text-align: center;
 }
-.input-main-container {
-  border: 2px solid #484343;
+.medium-text {
+  font-size: 10px;
+  font-weight: 500;
+}
+.action-container {
+  width: 252px;
+  border: 1px solid white;
   border-radius: 10px;
-  padding: 20px;
-  margin: 10px 0;
-  width: 80vw;
-  display: flex;
-  flex-direction: column;
+  padding: 10px;
 }
-.action-icons {
-  display: block;
-  margin: 30px auto;
-  height: 60px;
-  width: 60px;
-}
+
 @media screen and (min-width: 700px) {
-  .container-one {
-    margin: 0 50px;
+  .medium-text {
+    font-size: 15px;
   }
-  .input-main-container {
+  .action-container {
     width: 300px;
   }
 }
 @media screen and (min-width: 1000px) {
-  .container-one {
-    margin: 0 70px;
+  .medium-text {
+    font-size: 18px;
+  }
+  .action-container {
+    width: 400px;
   }
 }
