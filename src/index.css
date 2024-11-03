@@ -49,6 +49,7 @@ button {
     font-size: 18px;
   }
   .action-container {
-    width: 400px;
+    width: 350px;
+    padding: 10px;
   }
 }

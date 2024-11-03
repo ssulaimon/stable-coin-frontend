@@ -4,7 +4,7 @@ import { Dropdown } from "../components/reusable/Dropdown";
 import depositIcon from "../assets/app/deposit.svg";
 import { CustomInput } from "../components/reusable/Custominput";
 import { ActionButton } from "../components/reusable/ActionButton";
-export const Deposit= ()=>{
+export const RedeemCollateral= ()=>{
     const style = {
         display: "flex",
         flexDirection: "column",
@@ -18,7 +18,7 @@ export const Deposit= ()=>{
     const [selectedValue, updateSelectedValue] = useState(allowedAssets[0]); 
     return <div style={style}>
     <p className="section-title">
-    DEPOSIT
+    Redeem Collateral
         </p>
         <div className="action-container">
         <Dropdown selectedValue={selectedValue} options={allowedAssets} optionClicked={updateSelectedValue}/>
@@ -30,7 +30,7 @@ export const Deposit= ()=>{
 <p style={{color: "#C9C6C6", fontSize: "8px", paddingTop: "2px"}}>
     $60,000
 </p>
-<ActionButton name={"Deposit"}/>
+<ActionButton name={"Redeem"}/>
         </div>
     </div>
 }

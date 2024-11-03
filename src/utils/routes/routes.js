@@ -8,7 +8,7 @@ export const myRoutes = {
     mintAndDeposit: "/app/mintAndDeposit",
     redeem: "/app/redeem",
     liquidate: "/app/liquidate",
-    receipt: "/app/receipt",
+    transactionHistory: "/app/transactionHistory",
     protocolData: "/app/protocoldata",
     claimToken: "/app/claimToken"
 

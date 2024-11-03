@@ -1,10 +1,10 @@
 import { allowedAssets } from "../utils/const/assets";
 import { useState } from "react";
 import { Dropdown } from "../components/reusable/Dropdown";
-import depositIcon from "../assets/app/deposit.svg";
+import depositAnMintIcon from "../assets/app/depositAndMint.svg";
 import { CustomInput } from "../components/reusable/Custominput";
 import { ActionButton } from "../components/reusable/ActionButton";
-export const Deposit= ()=>{
+export const DepositAndMint= ()=>{
     const style = {
         display: "flex",
         flexDirection: "column",
@@ -18,18 +18,22 @@ export const Deposit= ()=>{
     const [selectedValue, updateSelectedValue] = useState(allowedAssets[0]); 
     return <div style={style}>
     <p className="section-title">
-    DEPOSIT
+    DEPOSIT AND MINT
         </p>
         <div className="action-container">
         <Dropdown selectedValue={selectedValue} options={allowedAssets} optionClicked={updateSelectedValue}/>
-        <img src={depositIcon} alt="" style={{
+        <CustomInput placeHolder="Amount" marginTop={"10px"}/>
+        <p style={{color: "#C9C6C6", fontSize: "8px", paddingTop: "2px"}}>
+    $60,000
+</p>
+        <img src={depositAnMintIcon} alt="" style={{
             display:"block",
             margin: "20px auto"
         }}/>
-<CustomInput placeHolder="Amount"/>
-<p style={{color: "#C9C6C6", fontSize: "8px", paddingTop: "2px"}}>
-    $60,000
-</p>
+
+<CustomInput placeHolder="USDN Amount"/>
+
+
 <ActionButton name={"Deposit"}/>
         </div>
     </div>

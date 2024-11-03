@@ -12,7 +12,9 @@ import { useState } from "react";
 import { MenuButton } from "../components/reusable/MenuButton";
 import "../styles/app/App.css";
 import { HiOutlineMenu } from "react-icons/hi";
-import { Deposit } from "./Deposit";
+import { DepositAndMint } from "./DepositAndMint";
+import { myRoutes } from "../utils/routes/routes";
+import { useNavigate, Outlet } from "react-router-dom";
 
 
 
@@ -23,50 +25,51 @@ import { Deposit } from "./Deposit";
 
 
 export const  App = ()=>{
+    const navigate = useNavigate();
     const [currentIndex, updateCurrentIndex] = useState(0);
     const [showSidePannel, updateShowSidePannel] = useState(false);
     const menus = [
         {
             name: "Dashboard",
-            path: "",
+            path: myRoutes.dashboard,
             icon: <MdSpaceDashboard/>
         },   {
             name: "Deposit Collateral",
-            path: "",
+            path: myRoutes.deposit,
             icon:<FaCircleDollarToSlot/>
         }
         , {
             name: "Mint USDN",
-            path: "",
+            path: myRoutes.mint,
             icon: <SiLinuxmint/>
         },
          {
             name: "Redeem Collateral",
-            path: "",
+            path: myRoutes.redeem,
             icon: <BsBank2/>
         }, , {
             name: "Burn",
-            path: "",
+            path: myRoutes.burn,
             icon: <FaFire/>
         }, {
             name: "Mint and Deposit",
-            path: "",
+            path: myRoutes.mintAndDeposit,
             icon: <TbTransfer/>
         }, {
             name: "Liquidate",
-            path: "",
+            path: myRoutes.liquidate,
             icon: <AiFillDashboard/>
         }, {
             name: "Transactions",
-            path: "",
+            path: myRoutes.transactionHistory,
             icon: <IoReceipt/>
         }, {
             name: "Protocol data",
-            path: "",
+            path: myRoutes.protocolData,
             icon: <FaDatabase/>
         }, {
             name: "Claim token",
-            path: "",
+            path: myRoutes.claimToken,
             icon: <MdRedeem/>
         }
     ]
@@ -95,11 +98,13 @@ export const  App = ()=>{
         {
             menus.map((item, index)=> <MenuButton value={item} isActive={currentIndex === index ? true: false } key={item.name} onClicked={()=>{
                 updateCurrentIndex(index);
+                navigate(item.path);
+
             }}/>)
         }
         </div>
         <div id="out-let-container">
-<Deposit/>
+<Outlet></Outlet>
         </div>
       </div>
     </div>

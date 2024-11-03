@@ -1,7 +1,7 @@
 import ethereumLogo from "../../assets/ethereum.svg";
 import "../../styles/landingPage/Banner.css";
 import {LargeButton} from "../reusable/LargeButton"
-import { myRoutes } from "../../utils/models/routes/routes";
+import { myRoutes } from "../../utils/routes/routes";
 import { useNavigate } from "react-router-dom";
 export function Banner(){
     const navigate = useNavigate();
@@ -14,7 +14,7 @@ export function Banner(){
     <p id="banner-detail-text">
     BACKED BY WBTC, WETH, AND OTHER ASSETS
     </p>
-    <LargeButton title={"LAUNCH APP"} backgroundColor={"white"} onTap={()=> navigate(myRoutes.app)}/>
+    <LargeButton title={"LAUNCH APP"} backgroundColor={"white"} onTap={()=> navigate(myRoutes.dashboard)}/>
 </div>
     </div>
 }
