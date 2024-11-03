@@ -2,7 +2,7 @@ import { allowedAssets } from "../utils/const/assets";
 import { useState } from "react";
 import { Dropdown } from "../components/reusable/Dropdown";
 import depositAnMintIcon from "../assets/app/depositAndMint.svg";
-import { CustomInput } from "../components/reusable/Custominput";
+import { CustomInput } from "../components/reusable/CustomInput";
 import { ActionButton } from "../components/reusable/ActionButton";
 export const DepositAndMint= ()=>{
     const style = {

@@ -1,4 +1,4 @@
-import "../../styles/reusable/Custominput.css";
+import "../../styles/reusable/CustomInput.css";
 import exact from "prop-types-exact";
 import PropTypes from "prop-types";
 export const CustomInput = (props)=>{

@@ -1,4 +1,4 @@
-import { CustomInput } from "../components/reusable/Custominput";
+import { CustomInput } from "../components/reusable/CustomInput";
 import { ActionButton } from "../components/reusable/ActionButton";
 import burn from "../assets/app/burn.svg";
 

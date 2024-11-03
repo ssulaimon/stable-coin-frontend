@@ -12,7 +12,6 @@ import { useState } from "react";
 import { MenuButton } from "../components/reusable/MenuButton";
 import "../styles/app/App.css";
 import { HiOutlineMenu } from "react-icons/hi";
-import { DepositAndMint } from "./DepositAndMint";
 import { myRoutes } from "../utils/routes/routes";
 import { useNavigate, Outlet } from "react-router-dom";
 
