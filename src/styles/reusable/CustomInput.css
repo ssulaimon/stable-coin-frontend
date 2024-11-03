@@ -3,7 +3,13 @@
   width: 100%;
   padding: 10px;
   font-weight: 500;
+  background-color: white;
+  color: black;
 }
 .input:focus {
   outline: none;
+  color: black;
+}
+.input::placeholder {
+  color: black;
 }
