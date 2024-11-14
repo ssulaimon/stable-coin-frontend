@@ -1,19 +1,19 @@
-import { MdSpaceDashboard } from "react-icons/md";
-import { AiFillDashboard } from "react-icons/ai";
-import { FaDatabase } from "react-icons/fa6";
-import { SiLinuxmint } from "react-icons/si";
-import { TbTransfer } from "react-icons/tb";
-import { FaFire } from "react-icons/fa";
-import { IoReceipt } from "react-icons/io5";
-import { MdRedeem } from "react-icons/md";
-import { FaCircleDollarToSlot } from "react-icons/fa6";
-import { BsBank2 } from "react-icons/bs";
-import { useState } from "react";
-import { MenuButton } from "../components/reusable/MenuButton";
+import { AssetPrice } from "../utils/context/Contexts"
+import { useEffect, useState } from "react"
 import "../styles/app/App.css";
-import { HiOutlineMenu } from "react-icons/hi";
+import { IoMdMenu } from "react-icons/io";
 import { myRoutes } from "../utils/routes/routes";
-import { useNavigate, Outlet } from "react-router-dom";
+import { MdDashboard } from "react-icons/md";
+import { VscGitPullRequestCreate } from "react-icons/vsc";
+import { RiLuggageDepositFill } from "react-icons/ri";
+import { SiLinuxmint } from "react-icons/si";
+import { MdOutlineRedeem } from "react-icons/md";
+import { GiWantedReward } from "react-icons/gi";
+import { IoReceipt } from "react-icons/io5";
+import { FaDatabase } from "react-icons/fa";
+import { Outlet } from "react-router-dom";
+import { FaBurn } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -23,88 +23,116 @@ import { useNavigate, Outlet } from "react-router-dom";
 
 
 
-export const  App = ()=>{
+
+export const App = ()=>{
+    const [prices, updatePrices] = useState({
+        wETHPrice : 0,
+        wBTCPrice: 0,
+        connected: true
+    });
+    const [showMenu, updateShowMeu] = useState(false);
+    const [currrentIndex, updateCurrentIndex] = useState(0);
     const navigate = useNavigate();
-    const [currentIndex, updateCurrentIndex] = useState(0);
-    const [showSidePannel, updateShowSidePannel] = useState(false);
-    const menus = [
-        {
-            name: "Dashboard",
-            path: myRoutes.dashboard,
-            icon: <MdSpaceDashboard/>
-        },   {
-            name: "Deposit Collateral",
-            path: myRoutes.deposit,
-            icon:<FaCircleDollarToSlot/>
-        }
-        , {
-            name: "Mint USDN",
-            path: myRoutes.mint,
-            icon: <SiLinuxmint/>
-        },
-         {
-            name: "Redeem Collateral",
-            path: myRoutes.redeem,
-            icon: <BsBank2/>
-        }, , {
-            name: "Burn",
-            path: myRoutes.burn,
-            icon: <FaFire/>
-        }, {
-            name: "Mint and Deposit",
-            path: myRoutes.mintAndDeposit,
-            icon: <TbTransfer/>
-        }, {
-            name: "Liquidate",
-            path: myRoutes.liquidate,
-            icon: <AiFillDashboard/>
-        }, {
-            name: "Transactions",
-            path: myRoutes.transactionHistory,
-            icon: <IoReceipt/>
-        }, {
-            name: "Protocol data",
-            path: myRoutes.protocolData,
-            icon: <FaDatabase/>
-        }, {
-            name: "Claim token",
-            path: myRoutes.claimToken,
-            icon: <MdRedeem/>
-        }
-    ]
-    return <div>
-    <div id="top-bar">
-    <button style={{border: "none", backgroundColor: "transparent"}} onClick={
-       ()=>{
-        updateShowSidePannel((currentState)=> !currentState)
-       }
-    }>
-    <HiOutlineMenu color="#010B13" size={25}/>
-    </button>
+    useEffect(()=>{
+        const apiKey = import.meta.env.VITE_API_KEY;
+        const endPointBitcoin ="https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd";
+        const endPointEthereum ="https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd";
+        const options = {method: 'GET', headers: {accept: 'application/json', 'x-cg-demo-api-key': apiKey}};
 
-    <button style={{
-        backgroundColor: "#010B13",
-        color: "white",
-        padding: "5px",
-        border: "none",
-        borderRadius: "10px"
-    }} className="medium-text">
-        Connect
-    </button>
-    </div>
-      <div id="app-body-main-container">
-      <div id="side-pannel" className={showSidePannel ? "show-side-pannel ": "hide-side-pannel"}>
+
+fetch(endPointBitcoin, options)
+  .then(response => response.json())
+  .then(data => updatePrices((currentPrice)=> ({... currentPrice, wBTCPrice: data["bitcoin"]["usd"]})))
+  .catch(err => console.error(err));
+    
+fetch(endPointEthereum, options)
+  .then(response => response.json())
+  .then(data => updatePrices((currentPrice)=> ({... currentPrice, wETHPrice: data["ethereum"][["usd"]]})))
+  .catch(err => console.error(err));
+  
+
+    }, [])
+    const menus = [{
+        name: "Dashboard",
+        to: myRoutes.dashboard,
+        icon: <MdDashboard/>
+    }, {
+        name: "Mint USDN",
+        to: myRoutes.mint,
+        icon: <VscGitPullRequestCreate/>
+    }, {
+        name: "Depsit Collateral",
+        to: myRoutes.deposit,
+        icon: <RiLuggageDepositFill/>
+    },{
+        name: "Mint and Deposit",
+        to: myRoutes.mintAndDeposit,
+        icon: <SiLinuxmint/>
+    }, {
+        name: "Redeem Collateral",
+        to: myRoutes.redeem,
+        icon: <MdOutlineRedeem/>
+    },{
+name: "Burn USDN",
+to: myRoutes.burn,
+icon: <FaBurn/>
+
+    } ,
+    
+    {
+        name: "Liquidate",
+        to: myRoutes.liquidate,
+        icon: <GiWantedReward/>
+    }, {
+        name: "Transaction History",
+        to: myRoutes.transactionHistory,
+        icon: <IoReceipt/>
+    }, {
+        name: "Protocol Data",
+        to: myRoutes.protocolData,
+        icon: <FaDatabase/>
+    }];
+
+  
+    return <>
+    <AssetPrice.Provider value={prices}>
+        <div id="app-main-body">
+        <div id="mobile-top-bar">
+<button style={{background: "transparent", border: "none"}} onClick={()=> updateShowMeu((currentState)=> !currentState)}>
+<IoMdMenu color="black" size={20}/>
+</button>
+<button>
+    Connect wallet
+</button>
+        </div>
+
+      <div id="outter-layer">
+      <ul id="menu-main-item-container" className={showMenu ? "show-menu": "hide-menu"}>
         {
-            menus.map((item, index)=> <MenuButton value={item} isActive={currentIndex === index ? true: false } key={item.name} onClicked={()=>{
+            menus.map((item, index)=> <li key={item.name}>
+            <button id="menu-button" style={{backgroundColor: index == currrentIndex ? "#010B13": "transparent", color: index == currrentIndex ? "white": "#010B13"}} onClick={()=>{
                 updateCurrentIndex(index);
-                navigate(item.path);
-
-            }}/>)
+                navigate(item.to);
+                updateShowMeu((currentState)=> !currentState);
+            }}>
+                <span>
+{item.icon}
+                </span>
+                {item.name}
+            </button>
+            </li>)
         }
-        </div>
-        <div id="out-let-container">
-<Outlet></Outlet>
-        </div>
+        <li>
+            <button>
+                Connect Wallet
+            </button>
+        </li>
+      </ul>
+      <div id="action-layer">
+<Outlet/>
       </div>
-    </div>
+      </div>
+        </div>
+    </AssetPrice.Provider>
+    </>
 }

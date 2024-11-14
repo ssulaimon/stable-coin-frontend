@@ -1,5 +1,3 @@
 export const Liquidate = ()=>{
-    return <div>
-        
-    </div>
+    return <></>
 }

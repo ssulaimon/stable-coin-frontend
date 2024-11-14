@@ -1,32 +1,28 @@
-import { CustomInput } from "../components/reusable/CustomInput";
-import { ActionButton } from "../components/reusable/ActionButton";
-import burn from "../assets/app/burn.svg";
-
+import { useState, useContext } from "react";
+import { Input } from "../components/reusable/Input";
+import burnIcon from "../assets/app/burn.svg"
+import { AssetPrice } from "../utils/context/Contexts";
 
 export const Burn = ()=>{
-    const style = {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "10px"
-    
-
+    const [inputError, updateInputError] = useState(false);
+    const connection = useContext(AssetPrice);
+    function onChange (value){
+        if(isNaN(value.target.value)){
+    updateInputError(true);
+        }else{
+            updateInputError(false);
+        }
     }
-    
-   
-    return <div style={style}>
-         <p className="section-title">
-    MINT
-        </p>
-
-        <div className="action-container">
-        <CustomInput placeHolder="USDN Amount"/>
-        <img src={burn} alt="" style={{
-            display:"block",
-            margin: "20px auto"
-        }}/>
-        <ActionButton name={"BURN USDN"}/>
+    return <>
+        <div className="main-action-container">
+<div className="action-container">
+<Input name="mintAmount" ticker={"USDN"} onChange={onChange}/>
+{inputError ? <p className="input-error">Invalid value</p>: <span></span>}
+<img src={burnIcon} alt="mint-image" className="actions-icon" />
+<button type="submit" className="submit-btn" disabled={connection.connected && !inputError ? false : true}>
+            Burn
+        </button>
+</div>
         </div>
-    </div>
+    </>
 }
