@@ -1,4 +1,4 @@
-import "../styles/app/DashBoard.css"
+import "../styles/app/DashBoardStyle.css"
 import { AssetName } from "../components/reusable/AssetName"
 import { AssetDetails } from "../components/reusable/AssetDetails"
 import weth from "../assets/app/weth.svg"
