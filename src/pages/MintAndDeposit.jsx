@@ -11,7 +11,7 @@ export const MintAndDeposit = ()=>{
     const connection = useContext(AssetPrice);
 
     function onSubmit(){
-        
+        console.log("okay");
     }
     function onInputChange(value){
         if(isNaN(value.target.value) ){
