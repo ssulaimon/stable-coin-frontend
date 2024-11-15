@@ -9,6 +9,10 @@ export const MintAndDeposit = ()=>{
     const [inputError, updateInvalidValue] = useState(false);
     const [converter, updateConverter] = useState( "");
     const connection = useContext(AssetPrice);
+
+    function onSubmit(){
+        
+    }
     function onInputChange(value){
         if(isNaN(value.target.value) ){
             updateInvalidValue(true);
