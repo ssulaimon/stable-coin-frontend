@@ -14,6 +14,13 @@ import { FaDatabase } from "react-icons/fa";
 import { Outlet } from "react-router-dom";
 import { FaBurn } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { createAppKit } from '@reown/appkit/react'
+import { WagmiProvider } from 'wagmi'
+import { sepolia } from '@reown/appkit/networks'
+// import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
+import { useAppKitAccount } from "@reown/appkit/react";
+
 
 
 
@@ -25,10 +32,39 @@ import { useNavigate } from "react-router-dom";
 
 
 export const App = ()=>{
+  
+    const { address, isConnected } = useAppKitAccount()
+    const projectId = import.meta.env.VITE_PROJECT_ID;
+    const metadata = {
+        name: 'USDNexus',
+        description: 'USNexus DAO',
+        url: 'https://example.com', // origin must match your domain & subdomain
+        icons: ['https://avatars.githubusercontent.com/u/179229932']
+      };
+      const networks = [sepolia];
+      const wagmiAdapter = new WagmiAdapter({
+        networks,
+        projectId,
+        ssr: true
+      });
+
+      createAppKit({
+        adapters: [wagmiAdapter],
+        networks,
+        projectId,
+        metadata,
+        features: {
+          analytics: false 
+        },
+        themeVariables: {
+            '--w3m-accent': "#010B13"
+          }
+      })
+      
     const [prices, updatePrices] = useState({
         wETHPrice : 0,
         wBTCPrice: 0,
-        connected: true
+        connected: isConnected
     });
     const [showMenu, updateShowMeu] = useState(false);
     const [currrentIndex, updateCurrentIndex] = useState(0);
@@ -40,15 +76,19 @@ export const App = ()=>{
         const options = {method: 'GET', headers: {accept: 'application/json', 'x-cg-demo-api-key': apiKey}};
 
 
-fetch(endPointBitcoin, options)
-  .then(response => response.json())
-  .then(data => updatePrices((currentPrice)=> ({... currentPrice, wBTCPrice: data["bitcoin"]["usd"]})))
-  .catch(err => console.error(err));
-    
-fetch(endPointEthereum, options)
-  .then(response => response.json())
-  .then(data => updatePrices((currentPrice)=> ({... currentPrice, wETHPrice: data["ethereum"][["usd"]]})))
-  .catch(err => console.error(err));
+try{
+    fetch(endPointBitcoin, options)
+    .then(response => response.json())
+    .then(data => updatePrices((currentPrice)=> ({... currentPrice, wBTCPrice: data["bitcoin"]["usd"]})))
+    .catch(err => console.error(err));
+      
+  fetch(endPointEthereum, options)
+    .then(response => response.json())
+    .then(data => updatePrices((currentPrice)=> ({... currentPrice, wETHPrice: data["ethereum"][["usd"]]})))
+    .catch(err => console.error(err));
+}catch(error){
+    console.log(error);
+}
   
 
     }, [])
@@ -95,15 +135,15 @@ icon: <FaBurn/>
 
   
     return <>
-    <AssetPrice.Provider value={prices}>
+    <WagmiProvider config={wagmiAdapter.wagmiConfig}>
+       
+        <AssetPrice.Provider value={prices}>
         <div id="app-main-body">
         <div id="mobile-top-bar">
 <button style={{background: "transparent", border: "none"}} onClick={()=> updateShowMeu((currentState)=> !currentState)}>
 <IoMdMenu color="black" size={20}/>
 </button>
-<button>
-    Connect wallet
-</button>
+<appkit-button balance="hide" size="sm"/>
         </div>
 
       <div id="outter-layer">
@@ -123,9 +163,9 @@ icon: <FaBurn/>
             </li>)
         }
         <li>
-            <button>
-                Connect Wallet
-            </button>
+       <span id="connect-wallet-container">
+       <appkit-button balance="hide" size="sm"/>
+       </span>
         </li>
       </ul>
       <div id="action-layer">
@@ -134,5 +174,6 @@ icon: <FaBurn/>
       </div>
         </div>
     </AssetPrice.Provider>
+    </WagmiProvider>
     </>
 }

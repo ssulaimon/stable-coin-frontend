@@ -51,7 +51,9 @@
 #outter-layer {
   height: calc(100vh - 50px);
 }
-
+#connect-wallet-container {
+  padding: 10px;
+}
 @media screen and (min-width: 1000px) {
   #mobile-top-bar {
     display: none;
@@ -63,7 +65,7 @@
     border-radius: 0;
     visibility: visible;
     opacity: 1;
-    height: 100vh;
+    /* height: 100vh; */
     padding: 10px;
     padding-top: 30px;
     transition: none;
@@ -72,6 +74,9 @@
     font-size: 13px;
     padding: 10px 20px;
     border-radius: 5px;
+  }
+  #connect-wallet-container {
+    margin: 0 10px;
   }
   #outter-layer {
     display: flex;

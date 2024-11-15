@@ -1,0 +1,107 @@
+#dash-board-main-container {
+  padding: 20px;
+  background-color: #010b13;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+#account-detail-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+}
+
+#account-detail-container > div {
+  background-color: white;
+  color: black;
+  padding: 4px;
+  border-radius: 10px;
+}
+.address-container {
+  width: 120px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: no-wrap;
+  background-color: white;
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+}
+#overview-container {
+  background-color: #031625;
+  border-radius: 10px;
+  padding: 15px;
+}
+#dash-board-container-one {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+  color: white;
+  gap: 30px;
+}
+#liquidation-guage-text-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  position: relative;
+}
+#liquidation-guage-text-container > h2 {
+  color: white;
+  font-weight: normal;
+}
+#liquidation-guage-text-container > img {
+  height: 20px;
+  width: 20px;
+}
+#liquidation-guage-text-container > img:hover {
+  cursor: pointer;
+}
+#about-guage {
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 300px;
+  font-size: 12px;
+  bottom: -50px;
+  right: 0;
+  transition: opacity 1s ease-in;
+}
+.show-guage {
+  visibility: visible;
+  opacity: 1;
+}
+.hide-guage {
+  opacity: 0;
+  visibility: hidden;
+}
+#dummy-guage-container {
+  height: 300px;
+  width: 300px;
+  background-color: red;
+  margin: 20px auto;
+}
+@media screen and (min-width: 700px) {
+  #dash-board-main-container {
+    padding: 30px 40px;
+  }
+  #dash-board-container-one {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
+  #overview-container {
+    width: 40%;
+  }
+  #liquidation-guage-text-container {
+    justify-content: start;
+    gap: 20px;
+  }
+  #about-guage {
+    bottom: -50px;
+    left: 250px;
+  }
+}

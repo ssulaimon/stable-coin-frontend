@@ -1,0 +1,22 @@
+.assets-details-main-container {
+  background-color: #f3efef;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  flex: 1;
+}
+.assets-details-main-container:hover {
+  background-color: white;
+}
+.assets-details-main-container > img {
+  display: block;
+  margin: 5px auto;
+}
+.asset-full-name {
+  font-size: 10px;
+}
+.asset-balance {
+  font-size: 15px;
+  text-align: center;
+}
