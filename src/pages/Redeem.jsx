@@ -65,6 +65,12 @@ export const Redeem = ()=>{
         <div className="main-action-container">
 <div className="action-container">
 <form onSubmit={onSubmit}>
+<p style={{fontSize:"20px", color: "white"}}>
+            Redeem
+        </p>
+        <p style={{fontSize:"12px", color: "#9CA3AF", marginBottom: "20px"}}>
+            Get back funds
+        </p>
 <Dropdown selectedValue={selectedAsset}options={allowedAssets.filter((item)=> item.id != selectedAsset.id)} updateSelectedValue={updateSelectedAsset} />
 <img src={depositIcon} alt="mint-image" className="actions-icon" />
 <Input name={"redeemValue"} onChange={onInputChange}/>
@@ -80,6 +86,7 @@ export const Redeem = ()=>{
         </button>
 </form>
 </div>
+  {isConnected ? <span></span>: <p className="connect-wallet-error">Please Connect Wallet</p>}
         </div>
     </>
 }

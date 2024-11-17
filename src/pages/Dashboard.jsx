@@ -7,15 +7,19 @@ import more from "../assets/app/more.svg"
 import usdn from "../assets/app/usdn.svg";
 import { useAppKitAccount } from "@reown/appkit/react";
 import { useState } from "react"
+import { Gauge, gaugeClasses } from "@mui/x-charts"
 export const Dashboard = ()=>{
     const [showGuage, updateShowGuage] = useState(false);
-    const { address, isConnected } = useAppKitAccount()
+    const { address, isConnected } = useAppKitAccount();
     const titleStyle = {
         color: "white",
         fontWeight: "normal" ,
         marginTop: "20px",
         marginBottom: "10px"
     }
+    function normalizeValues(eth, btc) { 
+        const totalValue = 100; 
+        return (totalValue * eth) / (eth + btc); }
     return <>
         <div id="dash-board-main-container">
         <span id="account-detail-container">
@@ -40,9 +44,22 @@ export const Dashboard = ()=>{
 $35,000
 </h1>
 
-<div style={{backgroundColor: "red", height: "200px", width: "200px", margin: "20px auto", borderRadius: "50%"}}>
-
+<div style={{  display: "flex", flexDirection: "row", justifyContent: "center"}}>
+<Gauge height={200} width={200} value={normalizeValues(5, 5)} text={""}
+cornerRadius={"50%"}
+     sx={(theme) => ({
+      
+        [`& .${gaugeClasses.valueArc}`]: {
+          fill: '#4A3AFF',
+        },
+        [`& .${gaugeClasses.referenceArc}`]: {
+      fill: "#F0E5FC",
+    },
+       
+      })}
+/>
 </div>
+
 <span style={{display: "flex", flexDirection: "row", justifyContent: "center", gap:"20px"}}>
 
 <AssetName name={"WETH"} color={"#4A3AFF"}/>

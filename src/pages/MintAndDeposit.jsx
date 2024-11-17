@@ -76,6 +76,12 @@ export const MintAndDeposit = ()=>{
 <div className="action-container">
 
 <form onSubmit={onSubmit}>
+<p style={{fontSize:"15px", color: "white"}}>
+            Deposit and Mint
+        </p>
+        <p style={{fontSize:"10px", color: "#9CA3AF", marginBottom: "20px"}}>
+            Supercharge stabiility experience
+        </p>
 <Dropdown selectedValue={selectedAsset}options={allowedAssets.filter((item)=> item.id != selectedAsset.id)} updateSelectedValue={updateSelectedAsset} />
 <Input name={"depositValue"} onChange={onInputChange}/>
 <p style={conversionStyle}>
