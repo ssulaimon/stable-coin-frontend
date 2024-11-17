@@ -38,43 +38,56 @@ button {
   height: 100%;
 }
 .action-container {
-  border: 1px solid white;
-  padding: 10px;
-  border-radius: 5px;
+  border: 1px solid #343842;
+  padding: 30px;
+  border-radius: 28px;
+  background-color: #161c27;
 }
 .value-input-main-container {
   position: relative;
 }
 .value-input {
-  background-color: white;
+  /* background-color: #1b1b1b; */
+  background-color: transparent;
   display: block;
   width: 250px;
-  height: 30px;
-  border: none;
+  height: 40px;
+  border: 1px solid #343842;
   outline: none;
-  padding: 5px 10px;
+  padding: 30px 20px;
   padding-right: 50px;
-  border-radius: 2px;
-  margin: 10px 0;
+  border-radius: 12px;
+  margin: 20px 0;
   margin-bottom: 0;
+  font-size: 25px;
+  color: white;
 }
-
+.value-input:focus {
+  background-color: transparent;
+}
+/* .value-input:-webkit-autofill,
+.value-input:-webkit-autofill:hover,
+.value-input:-webkit-autofill:focus,
+.value-input:-webkit-autofill:active {
+  background-color: transparent !important;
+} */
 .ticker {
   position: absolute;
-  right: 3px;
-  color: #010b13;
-  top: 3px;
+  right: 10px;
+  color: white;
+  top: 22px;
   font-weight: 500;
+  font-size: 12px;
 }
 .submit-btn {
   display: block;
   width: 100%;
   text-align: center;
   border: none;
-  padding: 10px;
+  padding: 14px;
   font-size: 12px;
   border-radius: 12px;
-  margin: 5px 0;
+  margin: 10px 0;
 }
 .submit-btn:disabled {
   color: white;
@@ -85,7 +98,9 @@ button {
 }
 .actions-icon {
   display: block;
-  margin: 10px auto;
+  margin: 20px auto;
+  height: 50px;
+  width: 50px;
 }
 .action-title {
   color: white;

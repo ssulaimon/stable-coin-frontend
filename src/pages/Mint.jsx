@@ -37,12 +37,16 @@ updateIsLoading(false);
 }
     return <>
         <div className="main-action-container">
-        <p className="action-title">
-            MINT USDN
-        </p>
+       
         <div className="action-container">
        
         <form onSubmit={onSubmit}>
+        <p style={{fontSize:"20px", color: "white"}}>
+            Mint
+        </p>
+        <p style={{fontSize:"12px", color: "#9CA3AF"}}>
+            Enjoy stabiility experience
+        </p>
         
         <Input name="mintAmount" ticker={"USDN"} onChange={onChange}/>
         {inputError ? <p className="input-error">Invalid value</p>: <span></span>}

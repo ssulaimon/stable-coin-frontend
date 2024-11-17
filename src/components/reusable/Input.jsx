@@ -2,7 +2,7 @@ import exact from "prop-types-exact";
 import PropTypes from "prop-types";
 export const Input = (props)=><div className="value-input-main-container">
    
-        <input type="text" className="value-input" name={props.name} onChange={props.onChange}/>
+        <input type="text" className="value-input" name={props.name} onChange={props.onChange} placeholder="0"/>
        {
         props.ticker ?  <p className="ticker">
             {props.ticker}

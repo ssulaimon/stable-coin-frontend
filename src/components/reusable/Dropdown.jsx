@@ -22,12 +22,12 @@ updateShowOptions((currentState)=> !currentState);
 </button>
 <div className={`options-main-container ${showoptions ? "show-options" :"hide-options"}`}>
 {
-props.options.map((item)=> <span className="selected-value-container" style={{backgroundColor: "white",padding: "5px", margin: "5px 0px"}} key={item.id} onClick={()=>{
+props.options.map((item)=> <span className="selected-value-container" style={{backgroundColor: "white",padding: "10px", margin: "5px 0px", borderRadius:"5px",}} key={item.id} onClick={()=>{
     props.updateSelectedValue(item);
     updateShowOptions((currentState)=> !currentState);
 }}>
 <img src={item.image} alt="" />
-<p>
+<p style={{color: "black"}}>
     {item.name}
 </p>
 </span>)
